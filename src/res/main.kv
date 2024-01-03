@@ -1,21 +1,225 @@
-# Copyright (c) farm-ng, inc.
-#
-# Licensed under the Amiga Development Kit License (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     https://github.com/farm-ng/amiga-dev-kit/blob/main/LICENSE
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 RelativeLayout:
+    TabbedPanel:
+        id: mainTab
+        do_default_tab: False
+        TabbedPanelItem:
+            text: "Crop"
+            Image:
+                id: rgb
+    #     TabbedPanelItem:
+    #         text: "Filter"
+    #         BoxLayout:
+    #             id: cropped
+    #             orientation: "vertical"
+    #             BoxLayout:
+    #                 orientation: "horizontal"
+    #                 Image:
+    #                     id: cropImage
+    #                 Image:
+    #                     id: procImage	
+    #             BoxLayout:
+    #                 orientation: "vertical"
+    #                 BoxLayout:
+    #                     orientation: "horizontal"
+    #                     BoxLayout:
+    #                         orientation: "vertical"
+    #                         Label:
+    #                             text: "Low Threshold"
+    #                             font_size: 26 
+    #                         Slider:
+    #                             id: slider_LR
+    #                             step: 1
+    #                             min: 1
+    #                             max: 255
+    #                             value: 90
+    #                             orientation: "horizontal"
+    #                         Label:
+    #                             text: "H: " + str(slider_LR.value)
+    #                             font_size: 26 
+    #                         Slider:
+    #                             id: slider_LG
+    #                             step: 1
+    #                             min: 1
+    #                             max: 255
+    #                             value: 85
+    #                             orientation: "horizontal"
+    #                         Label:
+    #                             text: "S: " + str(slider_LG.value)
+    #                             font_size: 26 
+    #                         Slider:
+    #                             id: slider_LB
+    #                             step: 1
+    #                             min: 1
+    #                             max: 255
+    #                             value: 0
+    #                             orientation: "horizontal"
+    #                         Label:
+    #                             text: "V: " + str(slider_LB.value)
+    #                             font_size: 26 
+    #                     BoxLayout:
+    #                         orientation: "vertical"
+    #                         Label:
+    #                             text: "High Threshold"
+    #                             font_size: 26 
+    #                         Slider:
+    #                             id: slider_HR
+    #                             step: 1
+    #                             min: 1
+    #                             max: 255
+    #                             value: 255
+    #                             orientation: "horizontal"
+    #                         Label:
+    #                             text: "H: " + str(slider_HR.value)
+    #                             font_size: 26 
+    #                         Slider:
+    #                             id: slider_HG
+    #                             step: 1
+    #                             min: 1
+    #                             max: 255
+    #                             value: 255
+    #                             orientation: "horizontal"
+    #                         Label:
+    #                             text: "S: " + str(slider_HG.value)
+    #                             font_size: 26 
+    #                         Slider:
+    #                             id: slider_HB
+    #                             step: 1
+    #                             min: 1
+    #                             max: 255
+    #                             value: 255
+    #                             orientation: "horizontal"
+    #                         Label:
+    #                             text: "V: " + str(slider_HB.value)
+    #                             font_size: 26 
+        
+    #     TabbedPanelItem:
+    #         text: "Features"
+    #         BoxLayout:
+    #             id: features
+    #             orientation: "vertical"
+    #             BoxLayout:
+    #                 orientation: "horizontal"
+    #                 Image:
+    #                     id: grayImage
+    #                 Image:
+    #                     id: bwImage
+    #             BoxLayout:
+    #                 orientation: "vertical"
+    #                 Label:
+    #                     text: "Gray Level Threshold: " + str(sliderGrayThreshold.value)
+    #                     font_size: 28 
+    #                 Slider:
+    #                     id: sliderGrayThreshold
+    #                     step: 1
+    #                     min: 0
+    #                     max: 255
+    #                     value: 50
+    #                     orientation: "horizontal"
+    #                 Label:
+    #                     text: "Rmin: " + str(sliderRmin.value)
+    #                     font_size: 28 
+    #                 Slider:
+    #                     id: sliderRmin
+    #                     step: 0.01
+    #                     min: 0.0
+    #                     max: 1.0
+    #                     value: 0.02
+    #                 Label:
+    #                     text: "Rmax: " + str(sliderRmax.value)
+    #                     font_size: 28 
+    #                 Slider:
+    #                     id: sliderRmax
+    #                     step: 0.01
+    #                     min: 0.0
+    #                     max: 1.0
+    #                     value: 0.25
+        
+        
+    #     TabbedPanelItem:
+    #         text: "Navigation"
+    #         BoxLayout:
+    #             id: control
+    #             orientation: "vertical"
+    #             BoxLayout:
+    #                 orientation: "horizontal"
+    #                 Image:
+    #                     id: controlImage
+    #                 BoxLayout:
+    #                     orientation: "vertical"
+    #                     Button:
+    #                         orientation: "vertical"
+    #                         id: saveConfig
+    #                         text: "Save Configuration"
+    #                         font_size: 40
+    #                         on_press: app.save_config()
+    #                     Label: 
+    #                         id: errorLabel
+    #                         text: "Error: 0"  
+    #                         font_size: 40
+    #                     Label: 
+    #                         id: controlLabel
+    #                         text: "Control: 0"  
+    #                         font_size: 40
+    #                     ToggleButton:
+    #                         id: recordState
+    #                         text:  "Record"
+    #                         font_size: 40
+    #             BoxLayout:    
+    #                 orientation: "vertical"
+    #                 Label: 
+    #                     text: "Reference Slider: " + str(refLineSlider.value)
+    #                     font_size: 20   
+    #                 Slider:
+    #                     id: refLineSlider
+    #                     step: 1
+    #                     min: 0
+    #                     max: 100
+    #                     value: 30
+    #                 Label: 
+    #                     text: "Low pass filter alpha: " + str(alphaSlider.value)
+    #                     font_size: 20   
+    #                 Slider:
+    #                     id: alphaSlider
+    #                     step: 1
+    #                     min: 0 
+    #                     max: 100
+    #                     value: 90
+    #                 Label: 
+    #                     text: "Feedback Control Gain Kp: "+ str(kPSlider.value)
+    #                     font_size: 20  
+    #                 Slider:
+    #                     id: kPSlider
+    #                     step: 0.01
+    #                     min: 0.0
+    #                     max: 50.0
+    #                     value: 5.0
+    #                 Label: 
+    #                     text: "Max Turning Rate: " + str(maxTurningSlider.value)
+    #                     font_size: 20  
+    #                 Slider:
+    #                     id: maxTurningSlider
+    #                     step: 1
+    #                     min: 0
+    #                     max: 100
+    #                     value: 90
+    #                 Label: 
+    #                     text: "Velocity: " + str(velocitySlider.value)
+    #                     font_size: 20  
+    #                 Slider:
+    #                     id: velocitySlider
+    #                     step: 0.001
+    #                     min: -1
+    #                     max: 1
+    #                     value: 0
+                    
+    #     TabbedPanelItem:
+    #         text: "Graphs"
+    #         Image:
+    #             id: graphrgb
+
     Button:
         id: back_btn_layout
-        pos_hint: {"x": 0.0, "top": 1.0}
+        pos_hint: {"x": 0.0, "top": 0.925}
         background_color: 0, 0, 0, 0
         size_hint: 0.1, 0.1
         background_normal: "assets/back_button.png"
@@ -24,59 +228,3 @@ RelativeLayout:
             source: "assets/back_button_normal.png" if self.parent.state == "normal" else "assets/back_button_down.png"
             pos: self.parent.pos
             size: self.parent.size
-    BoxLayout:
-        orientation: 'horizontal'
-        BoxLayout:
-            size_hint_x: 0.3
-            orientation: 'vertical'
-            Widget:
-                size_hint_y: 2.0
-            Label:
-                text: "Amiga State:"
-                font_size: 18
-                size_hint_y: 0.5
-            Label:
-                text: app.amiga_state
-                font_size: 18
-            Widget: # Empty placeholder
-            Label:
-                text: "Speed [m/s]:"
-                font_size: 18
-                size_hint_y: 0.5
-            Label:
-                text: app.amiga_speed
-                font_size: 18
-            Widget: # Empty placeholder
-            Label:
-                text: "Angular Rate [rad/s]:"
-                font_size: 18
-                size_hint_y: 0.5
-            Label:
-                text: app.amiga_rate
-                font_size: 18
-            Widget:
-                size_hint_y: 2.0
-        VirtualJoystickWidget:
-            id: joystick
-        TabbedPanel:
-            do_default_tab: False
-            TabbedPanelItem:
-                text: "Rgb"
-                on_press: app.update_view('rgb')
-                Image:
-                    id: rgb
-            TabbedPanelItem:
-                text: "Disparity"
-                on_press: app.update_view('disparity')
-                Image:
-                    id: disparity
-            TabbedPanelItem:
-                text: "Left"
-                on_press: app.update_view('left')
-                Image:
-                    id: left
-            TabbedPanelItem:
-                text: "Right"
-                on_press: app.update_view('right')
-                Image:
-                    id: right
