@@ -242,8 +242,8 @@ class McTractor(App):
             # twist.linear_velocity_x = self.max_speed * joystick.joystick_pose.y
             # twist.angular_velocity = self.max_angular_rate * -joystick.joystick_pose.x
             print(f"Angular: {self.omega} Linear: {self.linear}")
-            twist.linear_velocity_x = 0
-            twist.angular_velocity = 0
+            twist.linear_velocity_x = self.linear
+            twist.angular_velocity = self.omega
             self.amiga_state = tpdo1.state.name
             self.amiga_speed = "{:.4f}".format(twist.linear_velocity_x)
             self.amiga_rate = "{:.4f}".format(twist.angular_velocity)
