@@ -1,3 +1,4 @@
+#kivy
 RelativeLayout:
     TabbedPanel:
         id: mainTab
@@ -94,125 +95,127 @@ RelativeLayout:
                                 text: "V: " + str(slider_HB.value)
                                 font_size: 26 
         
-    #     TabbedPanelItem:
-    #         text: "Features"
-    #         BoxLayout:
-    #             id: features
-    #             orientation: "vertical"
-    #             BoxLayout:
-    #                 orientation: "horizontal"
-    #                 Image:
-    #                     id: grayImage
-    #                 Image:
-    #                     id: bwImage
-    #             BoxLayout:
-    #                 orientation: "vertical"
-    #                 Label:
-    #                     text: "Gray Level Threshold: " + str(sliderGrayThreshold.value)
-    #                     font_size: 28 
-    #                 Slider:
-    #                     id: sliderGrayThreshold
-    #                     step: 1
-    #                     min: 0
-    #                     max: 255
-    #                     value: 50
-    #                     orientation: "horizontal"
-    #                 Label:
-    #                     text: "Rmin: " + str(sliderRmin.value)
-    #                     font_size: 28 
-    #                 Slider:
-    #                     id: sliderRmin
-    #                     step: 0.01
-    #                     min: 0.0
-    #                     max: 1.0
-    #                     value: 0.02
-    #                 Label:
-    #                     text: "Rmax: " + str(sliderRmax.value)
-    #                     font_size: 28 
-    #                 Slider:
-    #                     id: sliderRmax
-    #                     step: 0.01
-    #                     min: 0.0
-    #                     max: 1.0
-    #                     value: 0.25
+        TabbedPanelItem:
+            on_press: app.update_view("features")
+            text: "Features"
+            BoxLayout:
+                id: features
+                orientation: "vertical"
+                BoxLayout:
+                    orientation: "horizontal"
+                    Image:
+                        id: grayImage
+                    Image:
+                        id: bwImage
+                BoxLayout:
+                    orientation: "vertical"
+                    Label:
+                        text: "Gray Level Threshold: " + str(sliderGrayThreshold.value)
+                        font_size: 28 
+                    Slider:
+                        id: sliderGrayThreshold
+                        step: 1
+                        min: 0
+                        max: 255
+                        value: 50
+                        orientation: "horizontal"
+                    Label:
+                        text: "Rmin: " + str(sliderRmin.value)
+                        font_size: 28 
+                    Slider:
+                        id: sliderRmin
+                        step: 0.01
+                        min: 0.0
+                        max: 1.0
+                        value: 0.02
+                    Label:
+                        text: "Rmax: " + str(sliderRmax.value)
+                        font_size: 28 
+                    Slider:
+                        id: sliderRmax
+                        step: 0.01
+                        min: 0.0
+                        max: 1.0
+                        value: 0.25
         
         
-    #     TabbedPanelItem:
-    #         text: "Navigation"
-    #         BoxLayout:
-    #             id: control
-    #             orientation: "vertical"
-    #             BoxLayout:
-    #                 orientation: "horizontal"
-    #                 Image:
-    #                     id: controlImage
-    #                 BoxLayout:
-    #                     orientation: "vertical"
-    #                     Button:
-    #                         orientation: "vertical"
-    #                         id: saveConfig
-    #                         text: "Save Configuration"
-    #                         font_size: 40
-    #                         on_press: app.save_config()
-    #                     Label: 
-    #                         id: errorLabel
-    #                         text: "Error: 0"  
-    #                         font_size: 40
-    #                     Label: 
-    #                         id: controlLabel
-    #                         text: "Control: 0"  
-    #                         font_size: 40
-    #                     ToggleButton:
-    #                         id: recordState
-    #                         text:  "Record"
-    #                         font_size: 40
-    #             BoxLayout:    
-    #                 orientation: "vertical"
-    #                 Label: 
-    #                     text: "Reference Slider: " + str(refLineSlider.value)
-    #                     font_size: 20   
-    #                 Slider:
-    #                     id: refLineSlider
-    #                     step: 1
-    #                     min: 0
-    #                     max: 100
-    #                     value: 30
-    #                 Label: 
-    #                     text: "Low pass filter alpha: " + str(alphaSlider.value)
-    #                     font_size: 20   
-    #                 Slider:
-    #                     id: alphaSlider
-    #                     step: 1
-    #                     min: 0 
-    #                     max: 100
-    #                     value: 90
-    #                 Label: 
-    #                     text: "Feedback Control Gain Kp: "+ str(kPSlider.value)
-    #                     font_size: 20  
-    #                 Slider:
-    #                     id: kPSlider
-    #                     step: 0.01
-    #                     min: 0.0
-    #                     max: 50.0
-    #                     value: 5.0
-    #                 Label: 
-    #                     text: "Max Turning Rate: " + str(maxTurningSlider.value)
-    #                     font_size: 20  
-    #                 Slider:
-    #                     id: maxTurningSlider
-    #                     step: 1
-    #                     min: 0
-    #                     max: 100
-    #                     value: 90
-    #                 Label: 
-    #                     text: "Velocity: " + str(velocitySlider.value)
-    #                     font_size: 20  
-    #                 Slider:
-    #                     id: velocitySlider
-    #                     step: 0.001
-    #                     min: -1
-    #                     max: 1
-    #                     value: 0
+        TabbedPanelItem:
+            text: "Navigation"
+            on_press: app.update_view("control")
+            BoxLayout:
+                id: control
+                orientation: "vertical"
+                BoxLayout:
+                    orientation: "horizontal"
+                    Image:
+                        id: controlImage
+                    BoxLayout:
+                        orientation: "vertical"
+                        Button:
+                            orientation: "vertical"
+                            id: saveConfig
+                            text: "Save Configuration"
+                            font_size: 40
+                            on_press: app.save_config()
+                        Label: 
+                            id: errorLabel
+                            text: "Error: 0"  
+                            font_size: 40
+                        Label: 
+                            id: controlLabel
+                            text: "Control: 0"  
+                            font_size: 40
+                        ToggleButton:
+                            id: recordState
+                            text:  "Record"
+                            font_size: 40
+                BoxLayout:    
+                    orientation: "vertical"
+                    Label: 
+                        text: "Reference Slider: " + str(refLineSlider.value)
+                        font_size: 20   
+                    Slider:
+                        id: refLineSlider
+                        step: 1
+                        min: 0
+                        max: 100
+                        value: 30
+                    Label: 
+                        text: "Low pass filter alpha: " + str(alphaSlider.value)
+                        font_size: 20   
+                    Slider:
+                        id: alphaSlider
+                        step: 1
+                        min: 0 
+                        max: 100
+                        value: 90
+                    Label: 
+                        text: "Feedback Control Gain Kp: "+ str(kPSlider.value)
+                        font_size: 20  
+                    Slider:
+                        id: kPSlider
+                        step: 0.01
+                        min: 0.0
+                        max: 50.0
+                        value: 5.0
+                    Label: 
+                        text: "Max Turning Rate: " + str(maxTurningSlider.value)
+                        font_size: 20  
+                    Slider:
+                        id: maxTurningSlider
+                        step: 1
+                        min: 0
+                        max: 100
+                        value: 90
+                    Label: 
+                        text: "Velocity: " + str(velocitySlider.value)
+                        font_size: 20  
+                    Slider:
+                        id: velocitySlider
+                        step: 0.001
+                        min: -1
+                        max: 1
+                        value: 0
                     
     #     TabbedPanelItem:
     #         text: "Graphs"
