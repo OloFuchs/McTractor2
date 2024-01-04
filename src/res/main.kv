@@ -3,94 +3,96 @@ RelativeLayout:
         id: mainTab
         do_default_tab: False
         TabbedPanelItem:
+            on_press: app.update_view("rgb")
             text: "Crop"
             Image:
                 id: rgb
-    #     TabbedPanelItem:
-    #         text: "Filter"
-    #         BoxLayout:
-    #             id: cropped
-    #             orientation: "vertical"
-    #             BoxLayout:
-    #                 orientation: "horizontal"
-    #                 Image:
-    #                     id: cropImage
-    #                 Image:
-    #                     id: procImage	
-    #             BoxLayout:
-    #                 orientation: "vertical"
-    #                 BoxLayout:
-    #                     orientation: "horizontal"
-    #                     BoxLayout:
-    #                         orientation: "vertical"
-    #                         Label:
-    #                             text: "Low Threshold"
-    #                             font_size: 26 
-    #                         Slider:
-    #                             id: slider_LR
-    #                             step: 1
-    #                             min: 1
-    #                             max: 255
-    #                             value: 90
-    #                             orientation: "horizontal"
-    #                         Label:
-    #                             text: "H: " + str(slider_LR.value)
-    #                             font_size: 26 
-    #                         Slider:
-    #                             id: slider_LG
-    #                             step: 1
-    #                             min: 1
-    #                             max: 255
-    #                             value: 85
-    #                             orientation: "horizontal"
-    #                         Label:
-    #                             text: "S: " + str(slider_LG.value)
-    #                             font_size: 26 
-    #                         Slider:
-    #                             id: slider_LB
-    #                             step: 1
-    #                             min: 1
-    #                             max: 255
-    #                             value: 0
-    #                             orientation: "horizontal"
-    #                         Label:
-    #                             text: "V: " + str(slider_LB.value)
-    #                             font_size: 26 
-    #                     BoxLayout:
-    #                         orientation: "vertical"
-    #                         Label:
-    #                             text: "High Threshold"
-    #                             font_size: 26 
-    #                         Slider:
-    #                             id: slider_HR
-    #                             step: 1
-    #                             min: 1
-    #                             max: 255
-    #                             value: 255
-    #                             orientation: "horizontal"
-    #                         Label:
-    #                             text: "H: " + str(slider_HR.value)
-    #                             font_size: 26 
-    #                         Slider:
-    #                             id: slider_HG
-    #                             step: 1
-    #                             min: 1
-    #                             max: 255
-    #                             value: 255
-    #                             orientation: "horizontal"
-    #                         Label:
-    #                             text: "S: " + str(slider_HG.value)
-    #                             font_size: 26 
-    #                         Slider:
-    #                             id: slider_HB
-    #                             step: 1
-    #                             min: 1
-    #                             max: 255
-    #                             value: 255
-    #                             orientation: "horizontal"
-    #                         Label:
-    #                             text: "V: " + str(slider_HB.value)
-    #                             font_size: 26 
+        TabbedPanelItem:
+            on_press: app.update_view("filter")
+            text: "Filter"
+            BoxLayout:
+                id: cropped
+                orientation: "vertical"
+                BoxLayout:
+                    orientation: "horizontal"
+                    Image:
+                        id: cropImage
+                    Image:
+                        id: procImage	
+                BoxLayout:
+                    orientation: "vertical"
+                    BoxLayout:
+                        orientation: "horizontal"
+                        BoxLayout:
+                            orientation: "vertical"
+                            Label:
+                                text: "Low Threshold"
+                                font_size: 26 
+                            Slider:
+                                id: slider_LR
+                                step: 1
+                                min: 1
+                                max: 255
+                                value: 90
+                                orientation: "horizontal"
+                            Label:
+                                text: "H: " + str(slider_LR.value)
+                                font_size: 26 
+                            Slider:
+                                id: slider_LG
+                                step: 1
+                                min: 1
+                                max: 255
+                                value: 85
+                                orientation: "horizontal"
+                            Label:
+                                text: "S: " + str(slider_LG.value)
+                                font_size: 26 
+                            Slider:
+                                id: slider_LB
+                                step: 1
+                                min: 1
+                                max: 255
+                                value: 0
+                                orientation: "horizontal"
+                            Label:
+                                text: "V: " + str(slider_LB.value)
+                                font_size: 26 
+                        BoxLayout:
+                            orientation: "vertical"
+                            Label:
+                                text: "High Threshold"
+                                font_size: 26 
+                            Slider:
+                                id: slider_HR
+                                step: 1
+                                min: 1
+                                max: 255
+                                value: 255
+                                orientation: "horizontal"
+                            Label:
+                                text: "H: " + str(slider_HR.value)
+                                font_size: 26 
+                            Slider:
+                                id: slider_HG
+                                step: 1
+                                min: 1
+                                max: 255
+                                value: 255
+                                orientation: "horizontal"
+                            Label:
+                                text: "S: " + str(slider_HG.value)
+                                font_size: 26 
+                            Slider:
+                                id: slider_HB
+                                step: 1
+                                min: 1
+                                max: 255
+                                value: 255
+                                orientation: "horizontal"
+                            Label:
+                                text: "V: " + str(slider_HB.value)
+                                font_size: 26 
         
     #     TabbedPanelItem:
     #         text: "Features"
