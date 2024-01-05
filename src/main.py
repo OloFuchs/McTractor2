@@ -252,8 +252,9 @@ class McTractor(App):
             await asyncio.sleep(period)
 
     def mainTabImagingFunction(self, rgb):
-
+        print("WHAT",rgb.shape)
         rgb = cv2.flip(rgb,1) 
+        print("WHO",rgb.shape)
 
         color=(0,0,255)
  
